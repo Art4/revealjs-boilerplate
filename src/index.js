@@ -1,17 +1,21 @@
 import main from './main';
-import Reveal from 'reveal.js';
+import Reveal from 'reveal.js/dist/reveal.esm.js';
+import ZoomPlugin from 'reveal.js/plugin/zoom/zoom.esm.js';
 
-import 'reveal.js/css/reveal.css';
+import 'reveal.js/dist/reveal.css';
 // Themes: beige, black, blood, league, moon, night, serif, simple, sky, solarized, white
-import 'reveal.js/css/theme/white.css';
+import 'reveal.js/dist/theme/white.css';
 // Theme used for syntax highlighting of code
-import 'reveal.js/lib/css/zenburn.css';
+import 'reveal.js/plugin/highlight/zenburn.css';
 
-// configuration see https://github.com/hakimel/reveal.js#configuration
+// configuration see https://revealjs.com/config/
 Reveal.initialize({
+    // define plugins here
+    plugins: [
+        ZoomPlugin,
+    ],
     history: true,
     transition: 'slide', // none/fade/slide/convex/concave/zoom
-    hideAddressBar: true,
     dependencies: [
         // DONT LOAD PLUGINS HERE!
         // use require() for plugins after Reveal.initialize()
@@ -20,12 +24,5 @@ Reveal.initialize({
     // parallaxBackgroundSize: '3648px 2056px',
     pdfSeparateFragments: false,
 });
-
-// Load plugins here
-// require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/highlight/highlight');
-// require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/markdown/marked');
-// require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/markdown/markedown');
-// require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/notes/notes'); // NOT WORKING!!
-require('imports-loader?Reveal=reveal.js/js/reveal!reveal.js/plugin/zoom-js/zoom');
 
 main.run();
