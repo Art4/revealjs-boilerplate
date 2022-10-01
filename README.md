@@ -4,7 +4,7 @@ Build presentations with reveal.js with zip export, build with webpack.
 
 ## Requirements
 
-- nodejs 6+
+- node 16
 
 ## How to use
 
